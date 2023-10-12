@@ -1,0 +1,69 @@
+{
+    "api": {
+      "names": [
+        "Дом",
+        "Квартира",
+        "Дом",
+        "Отель",
+        "Квартира"
+      ],
+      "descriptions": [
+        "Дом, расположенный на берегу моря",
+        "В центре Екатеринбурга",
+        "В горах",
+        "Уютный номер на двоих в гостинице с завтраком включенным в стоимость",
+        "В центре Киото с видом на старые японские дома"
+      ],
+      "previewImages": [
+        "previewImage1.jpg",
+        "previewImage2.jpg",
+        "previewImage3.jpg",
+        "previewImage4.jpg",
+        "previewImage5.jpg"
+      ],
+      "images": [
+        "image1.jpg",
+        "image2.jpg",
+        "image3.jpg",
+        "image4.jpg",
+        "image5.jpg"
+      ],
+      "coordinates": {
+        "latitude": [5.1234, 3.1234, 7.22334],
+        "longitude": [1.1434, 5.1434, 12.3245]
+      },
+      "users" : {
+        "usernames": [
+          "Игорь",
+          "Юлия",
+          "Егор",
+          "Слава",
+          "Матвей"
+        ],
+        "avatars": [
+          "avatar1.jpg",
+          "avatar2.jpg",
+          "avatar3.jpg",
+          "avatar4.jpg",
+          "avatar5.jpg"
+        ],
+        "emails": [
+          "kek@mail.ru",
+          "lol@yandex.ru",
+          "asd@doubletapp.ai",
+          "deffer@doubletapp.io",
+          "deffer@lol.ai",
+          "deffer@yandex.ai",
+          "jesko@mail.ai"
+        ],
+        "passwords": [
+          "password1",
+          "password2",
+          "password3",
+          "password4",
+          "password5",
+          "password6"
+        ]
+      }
+    }
+  }

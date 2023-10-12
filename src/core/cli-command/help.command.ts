@@ -10,9 +10,10 @@ export default class HelpCommand implements CliCommandInterface {
         ${chalk.bold('Пример:')}
             ${chalk.green('npm run ts main.cli.ts --<command> [--arguments]')}
         ${chalk.bold('Команды:')} ${chalk.green(`
-          --version:                   # выводит номер версии
-          --help:                      # печатает этот текст
-          --import <path>:             # импортирует данные из TSV`)}\`
+          --version:                           # выводит номер версии
+          --help:                              # печатает этот текст
+          --import <path>:                     # импортирует данные из TSV
+          --generate <n> <filepath> <url>      # генерирует произвольное количество тестовых данных`)}\`
         `);
   }
 }
