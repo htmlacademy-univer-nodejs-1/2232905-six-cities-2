@@ -1,23 +1,20 @@
-import {generateRandomValue, getRandomItem, getRandomItems} from '../../helpers/random.js';
-import {MockData} from '../../../types/mock-data.type.js';
+import {generateRandomValue, getRandomItem, getRandomItems} from '../core/helpers/random.js';
+import {MockData} from '../types/mock-data.type.js';
 import {OfferGeneratorInterface} from './offer-generator.interface.js';
-import {CityEnum} from '../../../types/city.enum.js';
-import {HousingType} from '../../../types/house-type.enum.js';
-import {Facilities} from '../../../types/facilities.enum.js';
-import {UserTypeEnum} from '../../../types/user-type.enum.js';
+import {CityEnum} from '../types/city.enum.js';
+import {HousingType} from '../types/house-type.enum.js';
+import {Facilities} from '../types/facilities.enum.js';
+import {UserTypeEnum} from '../types/user-type.enum.js';
 import dayjs from 'dayjs';
+import {
+  FIRST_WEEK_DAY,
+  LAST_WEEK_DAY, MAX_COST, MAX_COUNT,
+  MAX_COUNT_ROOM,
+  MAX_RATING, MIN_COST, MIN_COUNT,
+  MIN_COUNT_ROOM,
+  MIN_RATING
+} from '../core/helpers/consts.js';
 
-
-const MIN_COUNT = 1;
-const MAX_COUNT = 10;
-const MIN_COUNT_ROOM = 1;
-const MAX_COUNT_ROOM = 8;
-const MIN_RATING = 1;
-const MAX_RATING = 5;
-const FIRST_WEEK_DAY = 1;
-const LAST_WEEK_DAY = 7;
-const MIN_COST = 100;
-const MAX_COST = 100000;
 
 export default class OfferGenerator implements OfferGeneratorInterface {
   constructor(private readonly mockData: MockData) {
@@ -42,7 +39,6 @@ export default class OfferGenerator implements OfferGeneratorInterface {
     const offerAuthorAvatar = getRandomItem<string>(this.mockData.users.avatars);
     const offerAuthorType = getRandomItem([UserTypeEnum.pro, UserTypeEnum.simple]);
     const offerAuthorNameEmail = getRandomItem<string>(this.mockData.users.emails);
-    const offerAuthorNamePassword = getRandomItem<string>(this.mockData.users.passwords);
     const commentsCount = generateRandomValue(MIN_COUNT, MAX_COUNT);
     const latitude = getRandomItem<number>(this.mockData.coordinates.latitude);
     const longitude = getRandomItem<number>(this.mockData.coordinates.longitude);
@@ -53,7 +49,7 @@ export default class OfferGenerator implements OfferGeneratorInterface {
       favorite, rating, housingType, roomCount,
       guestCount, cost, facilities, offerAuthorName,
       offerAuthorAvatar, offerAuthorType, offerAuthorNameEmail,
-      offerAuthorNamePassword, commentsCount, latitude, longitude
+      commentsCount, latitude, longitude
     ].join('\t');
   }
 }
