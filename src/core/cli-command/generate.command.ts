@@ -1,12 +1,19 @@
 import { CliCommandInterface } from './cli-command.interface.js';
 import {MockData} from '../../types/mock-data.type.js';
-import OfferGenerator from '../modules/offer-generator/offer-generator.js';
+import OfferGenerator from '../../modules/offer-generator.js';
 import TSVFileWriter from '../file-writer/tsv-file-writers.js';
+import ConsoleLoggerService from '../logger/console-logger.service.js';
+import {LoggerInterface} from '../logger/logger.interface';
 
 
 export default class GenerateCommand implements CliCommandInterface {
   public readonly name = '--generate';
   private initialData!: MockData;
+  private readonly logger: LoggerInterface;
+
+  constructor() {
+    this.logger = new ConsoleLoggerService();
+  }
 
   public async execute(...parameters:string[]): Promise<void> {
     const [count, filepath, url] = parameters;
@@ -15,7 +22,7 @@ export default class GenerateCommand implements CliCommandInterface {
       const res = await fetch(url);
       this.initialData = await res.json();
     } catch {
-      console.log(`Can't get data from ${url}`);
+      this.logger.error(`Can't get data from ${url}`);
     }
     const offerGenerator = new OfferGenerator(this.initialData);
     const fileWriter = new TSVFileWriter(filepath);
@@ -24,6 +31,6 @@ export default class GenerateCommand implements CliCommandInterface {
       await fileWriter.write(offerGenerator.generate());
     }
 
-    console.log(`File ${filepath} was created!`);
+    this.logger.info(`File ${filepath} was created!`);
   }
 }
