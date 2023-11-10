@@ -10,3 +10,6 @@ export const MIN_COUNT_ROOM = 1;
 export const MAX_COUNT_ROOM = 8;
 export const FIRST_WEEK_DAY = 1;
 export const LAST_WEEK_DAY = 7;
+export const MAX_PREMIUM_OFFERS_COUNT = 3;
+export const MAX_OFFERS_COUNT = 60;
+export const COMMENTS_COUNT = 50;
