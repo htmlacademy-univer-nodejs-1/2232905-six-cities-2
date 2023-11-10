@@ -139,23 +139,23 @@ paths:
     get:
       tags:
         - Comments
-      summary: Get comment for an offer
+      summary: Get comments for an offer
       parameters:
         - name: offerId
           in: path
           required: true
-          description: The ID of the offer to retrieve comment for
+          description: The ID of the offer to retrieve comments for
           schema:
             type: string
         - name: limit
           in: query
-          description: The maximum number of comment to return (optional)
+          description: The maximum number of comments to return (optional)
           required: false
           schema:
             type: integer
         - name: offset
           in: query
-          description: The number of comment to skip (optional)
+          description: The number of comments to skip (optional)
           required: false
           schema:
             type: integer
@@ -341,7 +341,7 @@ tags:
     description: Endpoints related to offers.
 
   - name: Comments
-    description: Endpoints related to comment on offers.
+    description: Endpoints related to comments on offers.
 
   - name: Users
     description: Endpoints related to user management, login, and registration.
