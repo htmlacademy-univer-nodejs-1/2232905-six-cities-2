@@ -5,12 +5,14 @@ import RestApplication from './app/rest-application.js';
 import {createApplicationContainer} from './app/rest-api.container';
 import {createOfferContainer} from './modules/offer/offer.container';
 import {createUserContainer} from './modules/user/user.container';
+import {createCommentContainer} from './modules/comment/comment.container';
 
 
 const mainContainer = Container.merge(
   createApplicationContainer(),
   createUserContainer(),
   createOfferContainer(),
+  createCommentContainer(),
 );
 const application = mainContainer.get<RestApplication>(Component.RestApplication);
 await application.init();
